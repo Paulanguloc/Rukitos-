@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#c00000">
+  <meta name="description" content="Rukitos Garcia – Tienda de ropa deportiva en San Antonio de Escazú. Envíos a todo Costa Rica.">
+  <meta property="og:title" content="Rukitos Garcia 💥 Tienda de Ropa">
+  <meta property="og:description" content="Pantalones Levis, Volcán, Camisas DryFit, Licras y más. San Antonio de Escazú. Envíos a todo el país.">
+  <meta property="og:image" content="https://res.cloudinary.com/dlz6uc574/image/upload/v1777007140/file_00000000538c71f8afd2daf55a782a2e_vhojae.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dlz6uc574/image/upload/v1777007140/file_00000000538c71f8afd2daf55a782a2e_vhojae.png">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dlz6uc574/image/upload/v1777007140/file_00000000538c71f8afd2daf55a782a2e_vhojae.png">
+  <title>Rukitos Garcia 💥 Tienda de Ropa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --rojo:#c00000;--negro:#111111;--oscuro:#1c1c1c;--card:#252525;
+  --borde:#383838;--blanco:#f4f4f4;--gris:#999;--amarillo:#ffdd00;
+  --verde-wa:#25D366;--r:14px;--nav:64px;
+  --title:'Anton',sans-serif;--body:'Nunito',sans-serif;
+  --tr:all .2s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--negro);color:var(--blanco);max-width:430px;margin:0 auto;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* SPLASH */
+#splash{position:fixed;inset:0;z-index:9999;background:var(--negro);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .5s ease;}
+#splash.out{opacity:0;pointer-events:none}
+.splash-ring{width:72px;height:72px;border-radius:50%;border:3px solid var(--borde);border-top-color:var(--rojo);animation:spin .8s linear infinite}
+.splash-name{font-family:var(--title);font-size:40px;letter-spacing:2px;text-transform:uppercase;line-height:1}
+.splash-name em{color:var(--rojo);font-style:normal}
+.splash-sub{font-size:11px;color:var(--gris);letter-spacing:3px;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* HEADER */
+.app-header{position:sticky;top:0;z-index:200;background:rgba(17,17,17,.96);backdrop-filter:blur(14px);border-bottom:2px solid var(--rojo);display:flex;align-items:center;justify-content:space-between;padding:11px 14px;}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-img{width:42px;height:42px;border-radius:10px;object-fit:cover;flex-shrink:0;border:1.5px solid var(--borde)}
+.logo-txt{font-family:var(--title);font-size:21px;letter-spacing:1px;text-transform:uppercase;line-height:1}
+.logo-txt em{color:var(--rojo);font-style:normal}
+.logo-txt small{display:block;font-family:var(--body);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gris);margin-top:1px}
+.hdr-right{display:flex;align-items:center;gap:8px}
+.btn-icono{width:40px;height:40px;background:var(--card);border:1px solid var(--borde);border-radius:10px;color:var(--blanco);font-size:18px;display:flex;align-items:center;justify-content:center;transition:var(--tr);position:relative;}
+.btn-icono:active{transform:scale(.9)}
+.cart-n{position:absolute;top:-6px;right:-6px;background:var(--rojo);color:white;font-size:10px;font-weight:900;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+.cart-n.oculto{display:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1e0000 0%,#1c1c1c 100%);padding:18px 16px 20px;border-bottom:1px solid var(--borde);position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-20px;top:-20px;width:150px;height:150px;background:radial-gradient(circle,rgba(200,0,0,.22),transparent 70%);border-radius:50%}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--rojo);color:white;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:8px}
+.hero-titulo{font-family:var(--title);font-size:28px;line-height:1.05;text-transform:uppercase;margin-bottom:8px}
+.hero-titulo span{color:var(--rojo)}
+.hero-info{display:flex;flex-direction:column;gap:5px}
+.hero-chip{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--gris)}
+.hero-chip b{color:var(--blanco)}
+.hero-btns{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn-waze{display:inline-flex;align-items:center;gap:6px;background:#00d4d4;color:#111;font-size:13px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:9px 16px;border-radius:8px;transition:var(--tr)}
+.btn-fb{display:inline-flex;align-items:center;gap:6px;background:#1877F2;color:white;font-size:13px;font-weight:800;padding:9px 16px;border-radius:8px;transition:var(--tr)}
+
+/* ENVIOS */
+.envios-bar{background:linear-gradient(90deg,var(--rojo),#900000);display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;font-size:12px;font-weight:800;letter-spacing:.5px;text-align:center}
+
+/* CATS NAV */
+.cats-nav{display:flex;overflow-x:auto;gap:8px;padding:11px 14px;scrollbar-width:none;border-bottom:1px solid var(--borde);background:var(--oscuro);position:sticky;top:62px;z-index:100}
+.cats-nav::-webkit-scrollbar{display:none}
+.cat-btn{flex-shrink:0;padding:7px 15px;border-radius:999px;border:1.5px solid var(--borde);background:var(--card);color:var(--gris);font-size:13px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;transition:var(--tr)}
+.cat-btn.activo{background:var(--rojo);border-color:var(--rojo);color:white}
+
+/* SECCIÓN */
+.seccion{padding-bottom:8px;border-bottom:1px solid var(--borde)}
+.sec-head{display:flex;align-items:center;justify-content:space-between;padding:16px 14px 8px}
+.sec-titulo{font-family:var(--title);font-size:21px;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.sec-liq{display:inline-block;background:var(--rojo);color:white;font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:4px}
+.sec-precios{padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:7px}
+.precio-chip{background:var(--card);border:1.5px solid var(--borde);border-radius:8px;padding:6px 12px;font-size:12px;font-weight:800}
+.precio-chip span{color:var(--rojo);font-size:16px}
+
+/* GALERÍA */
+.galeria-wrap{position:relative;margin:0 14px 10px}
+.galeria{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:var(--r)}
+.galeria::-webkit-scrollbar{display:none}
+.galeria-item{flex-shrink:0;width:190px;aspect-ratio:3/4;border-radius:var(--r);background:var(--card);border:1.5px solid var(--borde);scroll-snap-align:start;position:relative;overflow:hidden;cursor:pointer;transition:var(--tr)}
+.galeria-item:active{transform:scale(.97)}
+.galeria-item img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
+.item-comprar{position:absolute;bottom:8px;left:8px;right:8px;background:rgba(192,0,0,.88);color:white;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:8px;border-radius:8px;text-align:center;backdrop-filter:blur(4px);border:none;cursor:pointer;transition:var(--tr)}
+.item-comprar:active{transform:scale(.96)}
+.scroll-dots{display:flex;justify-content:center;gap:5px;margin-top:8px}
+.dot{width:6px;height:6px;border-radius:3px;background:var(--borde);transition:all .3s}
+.dot.activo{width:18px;background:var(--rojo)}
+
+/* MODAL COMPRA */
+.modal-bg{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.78);backdrop-filter:blur(5px);display:none;align-items:flex-end;justify-content:center}
+.modal-bg.abierto{display:flex}
+.modal-panel{width:100%;max-width:430px;background:var(--oscuro);border-radius:22px 22px 0 0;border:1px solid var(--borde);border-bottom:none;max-height:92vh;overflow-y:auto;animation:subir .3s ease}
+@keyframes subir{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{width:40px;height:4px;background:var(--borde);border-radius:2px;margin:14px auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:0 18px 14px;border-bottom:1px solid var(--borde)}
+.modal-titulo{font-family:var(--title);font-size:21px;text-transform:uppercase}
+.btn-cerrar{width:34px;height:34px;background:var(--card);border:1px solid var(--borde);border-radius:9px;color:var(--gris);font-size:16px;display:flex;align-items:center;justify-content:center}
+.modal-body{padding:16px 18px}
+.m-img-wrap{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--card);margin-bottom:12px;display:flex;align-items:center;justify-content:center}
+.m-img-wrap img{width:100%;height:100%;object-fit:cover}
+.m-img-emoji{font-size:60px}
+.m-cat{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gris)}
+.m-nombre{font-family:var(--title);font-size:24px;text-transform:uppercase;line-height:1.05;margin:4px 0 10px}
+.m-precios-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.m-precio-card{background:var(--card);border:1.5px solid var(--borde);border-radius:10px;padding:10px 8px;text-align:center;cursor:pointer;transition:var(--tr)}
+.m-precio-card.sel{border-color:var(--rojo);background:rgba(192,0,0,.15)}
+.m-precio-card .cant{font-size:10px;font-weight:800;color:var(--gris);text-transform:uppercase;letter-spacing:1px}
+.m-precio-card .pval{font-family:var(--title);font-size:19px;color:var(--rojo);margin-top:2px}
+.m-precio-card .ptxt{font-size:10px;color:var(--gris)}
+.m-lbl{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris);margin-bottom:8px}
+.tallas-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.talla-btn{padding:8px 14px;border:1.5px solid var(--borde);border-radius:8px;background:var(--card);color:var(--blanco);font-size:13px;font-weight:800;transition:var(--tr)}
+.talla-btn.sel{background:var(--rojo);border-color:var(--rojo);color:white}
+.m-cantidad-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.btn-qty{width:36px;height:36px;background:var(--card);border:1.5px solid var(--borde);border-radius:9px;color:var(--blanco);font-size:20px;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
+.btn-qty:active{background:var(--rojo);border-color:var(--rojo)}
+.qty-val{font-family:var(--title);font-size:24px;min-width:28px;text-align:center}
+.m-total{font-family:var(--title);font-size:28px;color:var(--amarillo);text-align:right;margin-bottom:14px}
+.m-total small{font-family:var(--body);font-size:11px;color:var(--gris);font-weight:700;display:block;text-align:right;margin-bottom:2px}
+.modal-footer{padding:0 18px 24px;display:flex;gap:8px}
+.btn-agregar{flex:1;padding:15px;background:var(--rojo);border-radius:12px;color:white;font-family:var(--title);font-size:17px;letter-spacing:1px;text-transform:uppercase;transition:var(--tr)}
+.btn-agregar:active{transform:scale(.97)}
+.btn-wa-directo{padding:15px 16px;background:#25D366;border-radius:12px;color:white;font-size:20px;transition:var(--tr)}
+
+/* CARRITO */
+.cart-sheet{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);display:none;align-items:flex-end;justify-content:center}
+.cart-sheet.abierto{display:flex}
+.cart-panel{width:100%;max-width:430px;background:var(--oscuro);border-radius:22px 22px 0 0;border:1px solid var(--borde);max-height:90vh;display:flex;flex-direction:column;animation:subir .3s ease}
+.cart-items{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.cart-item{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--borde);border-radius:12px;padding:12px}
+.ci-img{width:54px;height:54px;border-radius:10px;overflow:hidden;background:var(--borde);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:26px}
+.ci-img img{width:100%;height:100%;object-fit:cover}
+.ci-info{flex:1}
+.ci-nombre{font-size:14px;font-weight:800;line-height:1.2}
+.ci-sub{font-size:11px;color:var(--gris);margin-top:2px}
+.ci-precio{font-family:var(--title);font-size:17px;color:var(--rojo);margin-top:4px}
+.ci-qty{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ci-qty .btn-qty{width:30px;height:30px;font-size:16px}
+.ci-qty .qty-val{font-size:18px}
+.carrito-vacio{text-align:center;padding:40px 0;color:var(--gris)}
+.carrito-vacio .big{font-size:48px;margin-bottom:12px}
+.carrito-vacio p{font-family:var(--title);font-size:16px;text-transform:uppercase;letter-spacing:1px}
+.cart-foot{padding:16px;border-top:1px solid var(--borde)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cart-total-lbl{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gris)}
+.cart-total-val{font-family:var(--title);font-size:32px;color:var(--amarillo)}
+.btn-checkout{width:100%;padding:16px;background:#25D366;border-radius:14px;color:white;font-family:var(--title);font-size:18px;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;transition:var(--tr)}
+.btn-checkout:active{transform:scale(.98)}
+
+/* FAB WA */
+.fab-wa{position:fixed;bottom:calc(var(--nav) + 14px);right:14px;z-index:400}
+.fab-wa-btn{width:56px;height:56px;background:#25D366;border-radius:16px;color:white;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:var(--tr);animation:latido 2.5s ease-in-out infinite}
+@keyframes latido{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 6px 30px rgba(37,211,102,.75)}}
+.fab-wa-btn:active{transform:scale(.9)}
+
+/* SINPE flotante */
+.sinpe-fab{position:fixed;bottom:calc(var(--nav) + 78px);right:14px;z-index:400;background:var(--negro);border:1.5px solid var(--rojo);border-radius:14px;padding:7px 13px;text-align:center;cursor:pointer;transition:var(--tr)}
+.sinpe-fab:active{transform:scale(.95)}
+.sinpe-fab .s-lbl{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris)}
+.sinpe-fab .s-num{font-family:var(--title);font-size:17px;color:var(--rojo);letter-spacing:1px}
+
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(17,17,17,.97);backdrop-filter:blur(16px);border-top:1px solid var(--borde);display:flex;height:var(--nav);z-index:300}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--gris);font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;transition:var(--tr);padding:6px 2px}
+.nav-btn.activo{color:var(--rojo)}
+.nav-btn .ni{font-size:19px;transition:var(--tr)}
+.nav-btn.activo .ni{transform:scale(1.15)}
+.nav-carrito{flex:1;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;background:none;position:relative}
+.nav-carrito-inner{width:50px;height:50px;background:var(--rojo);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 0 20px rgba(200,0,0,.4);transition:var(--tr);position:relative}
+.nav-carrito-inner:active{transform:scale(.9)}
+
+/* TOAST */
+.toast{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(-10px);background:var(--rojo);color:white;font-size:13px;font-weight:800;letter-spacing:.5px;padding:10px 20px;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.5);z-index:9999;opacity:0;transition:all .3s ease;white-space:nowrap;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.pb-nav{padding-bottom:calc(var(--nav) + 8px)}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <img src="https://res.cloudinary.com/dlz6uc574/image/upload/v1777007140/file_00000000538c71f8afd2daf55a782a2e_vhojae.png" alt="Logo" style="width:90px;height:90px;border-radius:20px;object-fit:cover;border:2px solid var(--rojo);box-shadow:0 0 30px rgba(192,0,0,.4);margin-bottom:4px">
+  <div class="splash-name">Rukitos<em>Garcia</em></div>
+  <p class="splash-sub">Escazú · Costa Rica</p>
+  <div class="splash-ring"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FAB WhatsApp flotante -->
+<div class="fab-wa">
+  <button class="fab-wa-btn" onclick="irWA('Hola! Me interesa ver el catálogo de ropa 😊')" aria-label="WhatsApp">💬</button>
+</div>
+
+<!-- SINPE flotante -->
+<div class="sinpe-fab" onclick="copiarSinpe()" title="Toca para copiar">
+  <p class="s-lbl">SINPE Móvil</p>
+  <p class="s-num">8777-1080</p>
+</div>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="logo">
+    <img class="logo-img" src="https://res.cloudinary.com/dlz6uc574/image/upload/v1777007140/file_00000000538c71f8afd2daf55a782a2e_vhojae.png" alt="Rukitos Garcia Logo">
+    <div class="logo-txt">
+      Rukitos<em>Garcia</em>
+      <small>Tienda de Ropa · Escazú</small>
+    </div>
+  </div>
+  <div class="hdr-right">
+    <button class="btn-icono" onclick="abrirCarrito()" aria-label="Carrito">
+      🛒
+      <span class="cart-n oculto" id="cart-badge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+    <img src="https://res.cloudinary.com/dlz6uc574/image/upload/v1777007140/file_00000000538c71f8afd2daf55a782a2e_vhojae.png" alt="Logo" style="width:64px;height:64px;border-radius:14px;object-fit:cover;border:1.5px solid rgba(192,0,0,.5);flex-shrink:0">
+    <div>
+      <div class="hero-badge">💥 Bodega Física</div>
+      <h1 class="hero-titulo" style="margin-bottom:0">La mejor ropa<br><span>a los mejores precios</span></h1>
+    </div>
+  </div>
+  <div class="hero-info">
+    <p class="hero-chip">🕐 Lun–Dom <b>10am – 7pm</b></p>
+    <p class="hero-chip">📍 <b>San Antonio de Escazú</b></p>
+    <p class="hero-chip">🚚 <b>Envíos a todo el país</b></p>
+    <p class="hero-chip">📞 Luis García <b>8777-1080</b></p>
+  </div>
+  <div class="hero-btns">
+    <a href="https://waze.com/ul/hd1u0m6x79" target="_blank" class="btn-waze">🗺️ Waze</a>
+    <a href="https://www.facebook.com/rukitos.garcia.rg" target="_blank" class="btn-fb">📘 Facebook</a>
+  </div>
+</div>
+
+<div class="envios-bar">🚚 &nbsp;ENVÍOS A TODO COSTA RICA &nbsp;·&nbsp; Costo adicional · ¡Consulta!</div>
+
+<!-- CATS NAV -->
+<nav class="cats-nav" id="cats-nav">
+  <button class="cat-btn activo" data-sec="todos" onclick="selCat(this)">🏆 Todos</button>
+  <button class="cat-btn" data-sec="pantalones" onclick="selCat(this)">👖 Pantalones</button>
+  <button class="cat-btn" data-sec="shorts-hombre" onclick="selCat(this)">🩳 Shorts H</button>
+  <button class="cat-btn" data-sec="camisas" onclick="selCat(this)">👕 Camisas</button>
+  <button class="cat-btn" data-sec="army" onclick="selCat(this)">🪖 Army</button>
+  <button class="cat-btn" data-sec="dama" onclick="selCat(this)">👗 Dama</button>
+</nav>
+
+<!-- CONTENIDO -->
+<div class="pb-nav" id="contenido">
+
+  <!-- PANTALONES CABALLERO -->
+  <div class="seccion" id="sec-pantalones">
+    <div class="sec-head">
+      <h2 class="sec-titulo">👖 Pantalones Caballero</h2>
+    </div>
+    <div class="sec-precios">
+      <div class="precio-chip">x1 <span>₡8,900</span></div>
+      <div class="precio-chip">x6 <span>₡8,000</span> c/u</div>
+      <div class="precio-chip">x12 <span>₡6,950</span> c/u</div>
+    </div>
+    <div class="galeria-wrap">
+      <div class="galeria" id="gal-pantalones"></div>
+      <div class="scroll-dots" id="dots-pantalones"></div>
+    </div>
+  </div>
+
+  <!-- SHORTS HOMBRE -->
+  <div class="seccion" id="sec-shorts-hombre">
+    <div class="sec-head">
+      <h2 class="sec-titulo">🩳 Shorts Hombre Volcán</h2>
+    </div>
+    <div class="sec-precios">
+      <div class="precio-chip">x1 <span>₡6,800</span></div>
+      <div class="precio-chip">x6 <span>₡6,300</span> c/u</div>
+      <div class="precio-chip">x12 <span>₡5,800</span> c/u</div>
+    </div>
+    <div class="galeria-wrap">
+      <div class="galeria" id="gal-shorts-hombre"></div>
+      <div class="scroll-dots" id="dots-shorts-hombre"></div>
+    </div>
+  </div>
+
+  <!-- CAMISAS -->
+  <div class="seccion" id="sec-camisas">
+    <div class="sec-head">
+      <h2 class="sec-titulo">👕 Camisas Hombre</h2>
+    </div>
+    <div style="padding:0 14px 4px">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris)">Levis DryFit · x1 ₡5,700 · x6 ₡5,200 · x12 ₡4,700</p>
+    </div>
+    <div style="padding:6px 14px 8px;display:flex;align-items:center;gap:8px">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris)">Lacoste Dri-Fit</p>
+      <span class="sec-liq">💥 LIQUIDACIÓN ₡3,500</span>
+    </div>
+    <div class="galeria-wrap">
+      <div class="galeria" id="gal-camisas"></div>
+      <div class="scroll-dots" id="dots-camisas"></div>
+    </div>
+  </div>
+
+  <!-- ARMY -->
+  <div class="seccion" id="sec-army">
+    <div class="sec-head">
+      <h2 class="sec-titulo">🪖 Pantalones Army</h2>
+    </div>
+    <div class="sec-precios">
+      <div class="precio-chip">x1 <span>₡8,900</span></div>
+      <div class="precio-chip">x6 <span>₡8,000</span> c/u</div>
+      <div class="precio-chip">x12 <span>₡6,950</span> c/u</div>
+    </div>
+    <div class="galeria-wrap">
+      <div class="galeria" id="gal-army"></div>
+      <div class="scroll-dots" id="dots-army"></div>
+    </div>
+  </div>
+
+  <!-- DAMA -->
+  <div class="seccion" id="sec-dama">
+    <div class="sec-head">
+      <h2 class="sec-titulo">👗 Ropa Dama</h2>
+    </div>
+    <div style="padding:0 14px 4px;display:flex;flex-wrap:wrap;gap:6px">
+      <span class="sec-liq">🩳 Shorts ₡2,200</span>
+      <span class="sec-liq">🧘 Licras ₡3,000</span>
+      <span class="sec-liq">🏋️ Conjunto ₡6,300</span>
+    </div>
+    <div style="padding:4px 14px 8px;font-size:12px;color:var(--gris);font-weight:700">💥 Todos en LIQUIDACIÓN · Tallas S M L XL</div>
+    <div class="galeria-wrap">
+      <div class="galeria" id="gal-dama"></div>
+      <div class="scroll-dots" id="dots-dama"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL COMPRA -->
+<div class="modal-bg" id="modal-bg">
+  <div class="modal-panel">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <h3 class="modal-titulo" id="m-titulo">Producto</h3>
+      <button class="btn-cerrar" onclick="cerrarModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="m-img-wrap" id="m-img-wrap">
+        <span class="m-img-emoji">👕</span>
+      </div>
+      <p class="m-cat" id="m-cat"></p>
+      <p class="m-nombre" id="m-nombre"></p>
+      <p class="m-lbl">Precio por cantidad</p>
+      <div class="m-precios-grid" id="m-precios-grid"></div>
+      <div id="m-tallas-wrap">
+        <p class="m-lbl">Talla</p>
+        <div class="tallas-wrap" id="m-tallas"></div>
+      </div>
+      <p class="m-lbl">Unidades</p>
+      <div class="m-cantidad-row">
+        <button class="btn-qty" onclick="cambiarQty(-1)">−</button>
+        <span class="qty-val" id="m-qty">1</span>
+        <button class="btn-qty" onclick="cambiarQty(1)">+</button>
+      </div>
+      <div class="m-total"><small>Total estimado</small><span id="m-total-val">₡0</span></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-agregar" onclick="agregarAlCarrito()">+ Agregar al carrito</button>
+      <button class="btn-wa-directo" onclick="pedirDirectoWA()">💬</button>
+    </div>
+  </div>
+</div>
+
+<!-- CARRITO -->
+<div class="cart-sheet" id="cart-sheet">
+  <div style="position:absolute;inset:0" onclick="cerrarCarrito()"></div>
+  <div class="cart-panel">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <h3 class="modal-titulo">Mi Carrito 🛒</h3>
+      <button class="btn-cerrar" onclick="cerrarCarrito()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-foot">
+      <div class="cart-total-row">
+        <span class="cart-total-lbl">Total</span>
+        <span class="cart-total-val" id="cart-total">₡0</span>
+      </div>
+      <button class="btn-checkout" onclick="checkout()">💬 Enviar pedido por WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="nav-btn activo" data-sec="todos" onclick="selCat(this)">
+    <span class="ni">🏪</span>Tienda
+  </button>
+  <button class="nav-btn" data-sec="pantalones" onclick="selCat(this)">
+    <span class="ni">👖</span>Pantalones
+  </button>
+  <button class="nav-carrito" onclick="abrirCarrito()" aria-label="Carrito">
+    <div class="nav-carrito-inner">
+      🛒
+      <span class="cart-n oculto" id="cart-badge2">0</span>
+    </div>
+  </button>
+  <button class="nav-btn" data-sec="camisas" onclick="selCat(this)">
+    <span class="ni">👕</span>Camisas
+  </button>
+  <button class="nav-btn" data-sec="dama" onclick="selCat(this)">
+    <span class="ni">👗</span>Dama
+  </button>
+</nav>
+
+<script>
+const WA_NUM  = '50687771080';
+const SINPE_N = '8777-1080';
+
+/* ── IMÁGENES POR CATEGORÍA ── */
+const IMG = {
+  pantalones: [
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777003808/1776986536824_nnpnjk.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172321/IMG-20260225-WA0149_l900jo.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172319/IMG-20260225-WA0153_fgz37l.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172264/IMG-20260225-WA0152_hm6ui1.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172263/IMG-20260225-WA0150_kdjy4q.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172259/IMG-20260225-WA0151_hrzixi.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172257/IMG-20260225-WA0154_kjr1qn.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172253/IMG-20260225-WA0141_f3czl3.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172251/IMG-20260225-WA0145_a29vus.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172250/IMG-20260225-WA0148_br25oq.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172250/IMG-20260225-WA0140_lmhspr.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172249/IMG-20260225-WA0155_whgrmi.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172241/IMG-20260225-WA0147_eckojb.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172235/IMG-20260225-WA0142_rqzrgl.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172229/IMG-20260225-WA0146_mv1two.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172139/IMG-20260225-WA0158_jssvyh.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172123/IMG-20260225-WA0156_fzoujb.jpg'
+  ],
+  shortsH: [
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777003808/1776986536824_nnpnjk.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172265/IMG-20260225-WA0137_y4deiv.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172321/IMG-20260225-WA0139_blg9bz.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172322/IMG-20260225-WA0138_pjweno.jpg'
+  ],
+  camisas: [
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777003810/1776986413529_lhgjdg.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777003813/1776986402004_daae4d.jpg'
+  ],
+  army: [
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777003806/1776986456374_esszek.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773169976/IMG-20260221-WA0057_b4l4xe.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773169947/IMG-20260221-WA0056_alvlwv.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172025/IMG-20260221-WA0055_knduud.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172121/IMG-20260221-WA0054_arvnct.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172126/IMG-20260221-WA0055_c1el3r.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172138/IMG-20260221-WA0052_atal5k.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1773172138/IMG-20260221-WA0053_t1x4bf.jpg'
+  ],
+  dama: [
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004370/1777004345616_o7jpb2.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004371/1777004330306_eeefhi.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004373/1777004327268_hovgna.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004374/1777004324651_ksbury.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004376/1777004321766_lgutxu.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004377/1777004316757_pfbefl.jpg',
+    'https://res.cloudinary.com/dlz6uc574/image/upload/v1777004380/1777004298995_vuys3i.jpg'
+  ]
+};
+
+/* ── CATÁLOGO ── */
+const CAT = {
+  'pantalones':     {nombre:'Pantalón Caballero',  cat:'Levis & Volcán',  tallas:['28','30','32','34','36','38'], precios:[{c:1,v:8900},{c:6,v:8000},{c:12,v:6950}], imgs:IMG.pantalones},
+  'shorts-hombre':  {nombre:'Short Hombre Volcán', cat:'Caballero',       tallas:['S','M','L','XL'],            precios:[{c:1,v:6800},{c:6,v:6300},{c:12,v:5800}], imgs:IMG.shortsH},
+  'camisas-levis':  {nombre:'Camisa Levis DryFit', cat:'Hombre',          tallas:['S','M','L','XL'],            precios:[{c:1,v:5700},{c:6,v:5200},{c:12,v:4700}], imgs:IMG.camisas},
+  'camisas-lacoste':{nombre:'Camisa Lacoste',      cat:'LIQUIDACIÓN',     tallas:['S','M','L','XL'],            precios:[{c:1,v:3500}],                             imgs:IMG.camisas},
+  'army':           {nombre:'Pantalón Army',        cat:'Caballero',       tallas:['28','30','32','34','36','38'], precios:[{c:1,v:8900},{c:6,v:8000},{c:12,v:6950}], imgs:IMG.army},
+  'shorts-dama':    {nombre:'Short Deportivo Dama', cat:'LIQUIDACIÓN',    tallas:['S','M','L','XL'],            precios:[{c:1,v:2200}],                             imgs:IMG.dama},
+  'licras':         {nombre:'Licra Porta Celular',  cat:'Dama LIQUIDACIÓN',tallas:['S','M','L','XL'],           precios:[{c:1,v:3000}],                             imgs:IMG.dama},
+  'conjunto':       {nombre:'Conjunto Gym Dama',    cat:'Dama LIQUIDACIÓN',tallas:['S','M','L','XL'],           precios:[{c:1,v:6300}],                             imgs:IMG.dama}
+};
+
+/* ── GALERÍAS ── */
+function buildGal(galId, dotsId, imgs, key, label) {
+  const gal = document.getElementById(galId);
+  const dots = document.getElementById(dotsId);
+  if (!gal) return;
+  gal.innerHTML = imgs.map((url,i) =>
+    '<div class="galeria-item" onclick="abrirModal(\''+key+'\','+i+')">' +
+      '<img src="'+url+'" alt="'+label+'" loading="lazy">' +
+      '<button class="item-comprar" onclick="event.stopPropagation();abrirModal(\''+key+'\','+i+')">Comprar ›</button>' +
+    '</div>'
+  ).join('');
+  if (dots) {
+    dots.innerHTML = imgs.map((_,i)=>'<div class="dot'+(i===0?' activo':'')+'"></div>').join('');
+    gal.addEventListener('scroll',()=>{
+      const idx = Math.round(gal.scrollLeft / 200);
+      dots.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('activo',i===idx));
+    },{passive:true});
+  }
+}
+
+window.addEventListener('load',()=>{
+  buildGal('gal-pantalones','dots-pantalones', IMG.pantalones, 'pantalones', 'Pantalón');
+  buildGal('gal-shorts-hombre','dots-shorts-hombre', IMG.shortsH, 'shorts-hombre', 'Short');
+  buildGal('gal-camisas','dots-camisas', IMG.camisas, 'camisas-levis', 'Camisa');
+  buildGal('gal-army','dots-army', IMG.army, 'army', 'Army');
+  buildGal('gal-dama','dots-dama', IMG.dama, 'shorts-dama', 'Dama');
+
+  setTimeout(()=>{
+    document.getElementById('splash').classList.add('out');
+    setTimeout(()=>document.getElementById('splash').remove(),500);
+  },1200);
+});
+
+/* ── CATEGORÍAS ── */
+function selCat(btn) {
+  var sec = btn.dataset.sec;
+  document.querySelectorAll('.cat-btn,.nav-btn').forEach(b=>b.classList.remove('activo'));
+  document.querySelectorAll('[data-sec="'+sec+'"]').forEach(b=>b.classList.add('activo'));
+  var secs = document.querySelectorAll('.seccion');
+  if (sec === 'todos') { secs.forEach(s=>s.style.display='block'); }
+  else {
+    secs.forEach(s=>{ s.style.display = s.id==='sec-'+sec ? 'block':'none'; });
+    var t = document.getElementById('sec-'+sec);
+    if (t) setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),80);
+  }
+}
+
+/* ── MODAL ── */
+var prodActual=null, precioIdx=0, tallaSelec='', qtyModal=1, imgModal='';
+
+function abrirModal(key, imgIdx) {
+  var p = CAT[key]; if (!p) return;
+  prodActual=p; precioIdx=0; qtyModal=1; tallaSelec=p.tallas[0];
+  imgModal = p.imgs[imgIdx||0]||'';
+
+  var wrap = document.getElementById('m-img-wrap');
+  wrap.innerHTML = imgModal
+    ? '<img src="'+imgModal+'" alt="'+p.nombre+'" style="width:100%;height:100%;object-fit:cover">'
+    : '<span class="m-img-emoji">👕</span>';
+
+  document.getElementById('m-titulo').textContent = p.nombre;
+  document.getElementById('m-cat').textContent = p.cat;
+  document.getElementById('m-nombre').textContent = p.nombre;
+
+  document.getElementById('m-precios-grid').innerHTML = p.precios.map(function(pr,i){
+    return '<div class="m-precio-card '+(i===0?'sel':'')+'" onclick="selPrecio(this,'+i+')">' +
+      '<p class="cant">'+(pr.c===1?'x1 unidad':'x'+pr.c+' und.')+'</p>' +
+      '<p class="pval">₡'+pr.v.toLocaleString('es-CR')+'</p>' +
+      '<p class="ptxt">por prenda</p></div>';
+  }).join('');
+
+  document.getElementById('m-tallas').innerHTML = p.tallas.map(function(t,i){
+    return '<button class="talla-btn '+(i===0?'sel':'')+'" onclick="selTalla(this,\''+t+'\')">'+t+'</button>';
+  }).join('');
+
+  actualizarTotal();
+  document.getElementById('modal-bg').classList.add('abierto');
+  document.body.style.overflow='hidden';
+}
+
+function cerrarModal(){document.getElementById('modal-bg').classList.remove('abierto');document.body.style.overflow='';}
+function selPrecio(el,idx){
+  document.querySelectorAll('#m-precios-grid .m-precio-card').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel'); precioIdx=idx;
+  var min=prodActual.precios[idx].c;
+  if(qtyModal<min){qtyModal=min;document.getElementById('m-qty').textContent=qtyModal;}
+  actualizarTotal();
+}
+function selTalla(el,t){document.querySelectorAll('#m-tallas .talla-btn').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');tallaSelec=t;}
+function cambiarQty(d){
+  var min=prodActual?prodActual.precios[precioIdx].c:1;
+  qtyModal=Math.max(min,qtyModal+d);
+  document.getElementById('m-qty').textContent=qtyModal;
+  actualizarTotal();
+}
+function actualizarTotal(){
+  if(!prodActual)return;
+  var v=prodActual.precios[precioIdx].v*qtyModal;
+  document.getElementById('m-total-val').textContent='₡'+v.toLocaleString('es-CR');
+}
+
+/* ── CARRITO ── */
+var carrito=[];
+function agregarAlCarrito(){
+  if(!prodActual)return;
+  var precio=prodActual.precios[precioIdx].v;
+  var key=prodActual.nombre+'-'+tallaSelec+'-'+precio;
+  var ex=carrito.find(i=>i.key===key);
+  if(ex) ex.qty+=qtyModal;
+  else carrito.push({key,nombre:prodActual.nombre,img:imgModal,talla:tallaSelec,precio,qty:qtyModal});
+  actualizarCartUI(); cerrarModal();
+  toast('Agregado al carrito 🛒');
+}
+function cambiarQtyCart(key,d){
+  var item=carrito.find(i=>i.key===key); if(!item)return;
+  item.qty+=d;
+  if(item.qty<=0) carrito=carrito.filter(i=>i.key!==key);
+  actualizarCartUI(); renderCarrito();
+}
+function actualizarCartUI(){
+  var n=carrito.reduce((s,i)=>s+i.qty,0);
+  var total=carrito.reduce((s,i)=>s+i.precio*i.qty,0);
+  document.querySelectorAll('#cart-badge,#cart-badge2').forEach(b=>{b.textContent=n;b.classList.toggle('oculto',n===0);});
+  document.getElementById('cart-total').textContent='₡'+total.toLocaleString('es-CR');
+}
+function abrirCarrito(){renderCarrito();document.getElementById('cart-sheet').classList.add('abierto');document.body.style.overflow='hidden';}
+function cerrarCarrito(){document.getElementById('cart-sheet').classList.remove('abierto');document.body.style.overflow='';}
+function renderCarrito(){
+  var el=document.getElementById('cart-items');
+  if(carrito.length===0){el.innerHTML='<div class="carrito-vacio"><div class="big">🛒</div><p>Tu carrito está vacío</p></div>';return;}
+  el.innerHTML=carrito.map(i=>{
+    var thumb=i.img?'<div class="ci-img"><img src="'+i.img+'" alt="'+i.nombre+'"></div>':'<div class="ci-img">👕</div>';
+    return '<div class="cart-item">'+thumb+
+      '<div class="ci-info"><p class="ci-nombre">'+i.nombre+'</p>'+
+      '<p class="ci-sub">Talla: '+i.talla+' · ₡'+i.precio.toLocaleString('es-CR')+' c/u</p>'+
+      '<p class="ci-precio">₡'+(i.precio*i.qty).toLocaleString('es-CR')+'</p></div>'+
+      '<div class="ci-qty">'+
+        '<button class="btn-qty" onclick="cambiarQtyCart(\''+i.key+'\',-1)">−</button>'+
+        '<span class="qty-val">'+i.qty+'</span>'+
+        '<button class="btn-qty" onclick="cambiarQtyCart(\''+i.key+'\',1)">+</button>'+
+      '</div></div>';
+  }).join('');
+}
+function checkout(){
+  if(carrito.length===0){toast('El carrito está vacío 😅');return;}
+  var msg='¡Hola Rukitos Garcia! 😊 Quiero hacer un pedido:\n\n';
+  carrito.forEach(i=>{msg+='• '+i.nombre+' (Talla '+i.talla+') x'+i.qty+' — ₡'+(i.precio*i.qty).toLocaleString('es-CR')+'\n';});
+  var total=carrito.reduce((s,i)=>s+i.precio*i.qty,0);
+  msg+='\n💰 *TOTAL: ₡'+total.toLocaleString('es-CR')+'*\n\n¿Cómo coordino el pago y el envío?';
+  irWA(msg);
+}
+function pedirDirectoWA(){
+  if(!prodActual)return;
+  var precio=prodActual.precios[precioIdx].v;
+  var msg='¡Hola! Me interesa: *'+prodActual.nombre+'* (Talla '+tallaSelec+') x'+qtyModal+' — ₡'+(precio*qtyModal).toLocaleString('es-CR')+'. ¿Disponible?';
+  irWA(msg);
+}
+function irWA(msg){window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');}
+function copiarSinpe(){
+  navigator.clipboard.writeText(SINPE_N).then(()=>toast('SINPE '+SINPE_N+' copiado ✅')).catch(()=>toast('SINPE: '+SINPE_N));
+}
+var _tt;
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),2800);}
+document.getElementById('modal-bg').addEventListener('click',function(e){if(e.target===this)cerrarModal();});
+</script>
+</body>
+</html>
